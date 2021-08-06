@@ -7,7 +7,7 @@
 - &nbsp; Data Analytics, Cybersecurity and Quantum Computing are some topics that I find interesting.
 - &nbsp; Graphics Design, playing VALORANT and Music are some of the few things I do when I don't work/study.
 
-<h3> 🛠 &nbsp;My utility belt consists of:-</h3>
+<h3> 🛠 &nbsp;My Utility Belt consists of:-</h3>
 
 - 💻 &nbsp;
   ![Python](https://img.shields.io/badge/-Python-333333?style=flat&logo=python)
