@@ -39,6 +39,8 @@
 
 <br/>
 
+<h3> 💁‍♂️  &nbsp;Some Stats for geeks:-</h3>
+
 <a href="https://github.com/bernardbdas">
   <img height="180em" src="https://github-readme-stats.vercel.app/api?username=bernardbdas&theme=buefy&show_icons=true" />
   <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=bernardbdas&theme=buefy&layout=compact" />
