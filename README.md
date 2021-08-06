@@ -55,5 +55,3 @@
 <a href="mailto:bernardbdas@gmail.com"><img alt="Email" src="https://img.shields.io/badge/Email-bernardbdas@gmail.com-blue?style=flat-square&logo=gmail"></a>
 <a href="https://www.bernardbdas.com/"><img alt="Website" src="https://img.shields.io/badge/Website-www.bernardbdas.com-blue?style=flat-square&logo=google-chrome"></a>
 </p>
-
-⭐️ From [bernardbdas](https://github.com/bernardbdas)
