@@ -2,7 +2,7 @@
 
 <h3>Welcome to my Github profile!   :)</h3>
 
-- &nbsp; I am a postgraduate student from Christ University, Bangalore.
+- &nbsp; I am a postgraduate student at Christ University, Bangalore.
 - &nbsp; Currently, I am doing my Master's in Computer Applications (MCA).
 - &nbsp; Data Analytics, Cybersecurity and Quantum Computing are some topics that I find interesting.
 - &nbsp; Graphics Design, playing VALORANT and Music are some of the few things I do when I don't work/study.
