@@ -1,14 +1,16 @@
 <h2> Hey there! I'm Bernard.</h2>
 
-<h3> 👨🏻‍💻 &nbsp;About Me </h3>
+<h3>Welcome to my Github profile!</h3>
 
-- 🤔 &nbsp; Exploring new technologies and developing software solutions and quick hacks.
-- 🎓 &nbsp; Studying Computer Science and Mathematics at University of Massachusetts Amherst.
-- 💼 &nbsp; Working as a Business Development Associate at VirtuBox InfoTech Private Limited.
-- 🌱 &nbsp; Learning more about Cloud Architecture, Systems Design and Artificial Intelligence.
-- ✍️ &nbsp; Pursuing Graphic Design and Blog Writing as hobbies/side hustles.
+ &nbsp; I am a postgraduate student from Christ University, Bangalore.
+ 
+ &nbsp; Currently, I am doing my Master's in Computer Applications (MCA).
+ 
+ &nbsp; In the realm of Computer Science; Data Analytics, Systems Design and Quantum Computing are some topics which grab my undivided   attention.
+ 
+ &nbsp; Graphics Design, playing VALORANT and Music are some of the few things I do when I don't work/study.
 
-<h3> 🛠 &nbsp;Tech Stack</h3>
+<h3> 🛠 &nbsp;My utility belt consists of:-</h3>
 
 - 💻 &nbsp;
   ![Python](https://img.shields.io/badge/-Python-333333?style=flat&logo=python)
