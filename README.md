@@ -2,13 +2,10 @@
 
 <h3>Welcome to my Github profile!</h3>
 
- &nbsp; I am a postgraduate student from Christ University, Bangalore.
- 
- &nbsp; Currently, I am doing my Master's in Computer Applications (MCA).
- 
- &nbsp; In the realm of Computer Science; Data Analytics, Systems Design and Quantum Computing are some topics which grab my undivided   attention.
- 
- &nbsp; Graphics Design, playing VALORANT and Music are some of the few things I do when I don't work/study.
+- &nbsp; I am a postgraduate student from Christ University, Bangalore.
+- &nbsp; Currently, I am doing my Master's in Computer Applications (MCA).
+- &nbsp; In the realm of Computer Science; Data Analytics, Systems Design and Quantum Computing are some topics which grab my undivided attention.
+- &nbsp; Graphics Design, playing VALORANT and Music are some of the few things I do when I don't work/study.
 
 <h3> 🛠 &nbsp;My utility belt consists of:-</h3>
 
