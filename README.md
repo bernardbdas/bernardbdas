@@ -1,6 +1,6 @@
 <h2> Hey there! I'm Bernard</h2>
 
-<h3>Welcome to my Github profile!   :D</h3>
+<h3>Welcome to my Github profile!</h3>
 
 - &nbsp; I am a postgraduate student at Christ (Deemed to be University), Bangalore.
 - &nbsp; Currently, I am doing my Master's in Computer Applications (MCA).
