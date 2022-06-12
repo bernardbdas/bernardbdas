@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Headland+One&family=Julius+Sans+One&family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat&family=Fasthand&family=Headland+One&family=Julius+Sans+One&family=Montserrat&family=Pacifico&display=swap');
 
 /*defining-variables*/
 
@@ -15,64 +15,140 @@
     --light-color-bg: #678983;
     --light-color-d: #181D31;
     --light-color-scheme: "https://colorhunt.co/palette/f0e9d2e6ddc4678983181d31";
+    --light-color-scheme-2: "https://colorhunt.co/palette/062c3005595be2d784f5f5f5";
     /*fonts*/
     --head-font: 'Headland One', serif;
     --btn-font: 'Julius Sans One', sans-serif;
     --txt-font: 'Montserrat', sans-serif;
+    --logo-font: 'Fasthand', cursive;
+    --txt-font-cursive: 'Pacifico', cursive;
     --bg-img: url('..//img/form-bg-img1.jpg');
     --grad1: linear-gradient(to left, rgba(124, 201, 23, 0.6), rgba(15, 193, 216, 0.6));
     --grad2: linear-gradient(to left, rgba(250, 118, 42, 0.7), rgba(87, 108, 202, 0.6));
     --grad2: linear-gradient(to left, #ff1e1eb3, rgba(87, 108, 202, 0.6));
+    --grad-header: linear-gradient(141deg, rgb(252, 248, 232, 0.6) 0%, rgb(148, 180, 159, 0.6) 30%, rgb(236, 179, 144, 0.6) 50%, rgb(223, 120, 97, 0.6) 75%, rgb(236, 179, 101, 0.7)100%);
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
-    background-color: rgb(6, 70, 99, 0.6);
+    background-color: #F5F5F5;
     margin: 0 0 0 0;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+}
+
+.socials {
+    height: 70px;
+    width: 100%;
+    background-color: #064663;
+}
+
+.socials li {
+    display: inline;
 }
 
 #container {
     height: 100%;
     width: 100%;
-    padding: 10px 10px 10px 10px;
 }
 
 #navbar {
     width: 100%;
-    height: 80px;
+    height: 90px;
+    position: relative;
+    top: 0;
+    position: fixed;
+    background: var(--grad-header);
+    padding-top: 30px;
+    padding-bottom: 20px;
+    z-index: 1;
 }
 
-.menubar,
-.logo {
+.logo,
+.menubar {
     display: inline-block;
 }
 
 .logo {
-    padding: 0 10px 0 10px;
+    position: relative;
+    left: 10%;
+}
+
+.menubar {
+    position: relative;
+    left: 30%;
+}
+
+.menu-option {
+    font-family: var(--txt-font);
+    font-size: 25px;
+    color: #062C30;
+    transition: .75s;
+}
+
+.menu-option:hover {
+    color: #0800ff;
+    letter-spacing: 10px;
 }
 
 #logo {
     display: inline;
-    font-family: var(--txt-font);
-    font-size: 25px;
+    font-family: var(--txt-font-cursive);
+    font-size: 50px;
+    color: #062C30;
 }
 
 #menu li {
     display: inline;
-    padding: 5px 10px 5px 10px;
-    font-family: var(--txt-font);
-    font-size: 25px;
+    padding: 5px 20px 5px 20px;
 }
 
 #work,
 #about,
 #contact {
     width: 100%;
-    height: 100px;
+    height: 700px;
+    display: inline-block;
+    padding: 0 0 0 0;
+    margin: 0 0 0 0;
     /*background-color: var(--dark-color-bg);*/
 }
 
-#work {}
+#work {
+    background-color: var(--light-color-bg);
+}
 
-#about {}
+#work h1 {
+    text-align: center;
+    font-family: var(--txt-font);
+    font-size: 50px;
+    color: #062C30;
+    position: relative;
+    top: 160px;
+    right: 500px;
+}
 
-#contact {}
+#about {
+    background-color: var(--light-color-bg);
+}
+
+#contact {
+    background-color: var(--light-color-bg);
+}
+
+@media only screen and (max-width: 768px) {
+    #container {
+        width: 90%;
+        height: 90%;
+        margin: auto;
+        margin-top: 5%;
+        margin-bottom: 10%;
+        border-radius: 5px;
+    }
+}
