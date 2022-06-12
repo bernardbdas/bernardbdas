@@ -1,0 +1,3 @@
+works_table(
+    work_id, position, organisation, year, work, link
+)
