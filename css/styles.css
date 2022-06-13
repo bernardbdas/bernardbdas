@@ -1,6 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Caveat&family=Fasthand&family=Headland+One&family=Julius+Sans+One&family=Montserrat&family=Pacifico&display=swap');
+/******************** importing fonts, icons and css using api ********************/
 
-/*defining-variables*/
+@import url('https://fonts.googleapis.com/css2?family=Caveat&family=Fasthand&family=Headland+One&family=Julius+Sans+One&family=Montserrat&family=Nova+Oval&family=Pacifico&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900");
+
+/******************** defining-variables ********************/
 
  :root {
     /*for dark mode*/
@@ -12,7 +15,7 @@
     /*for light mode*/
     --light-color-a: #F0E9D2;
     --light-color-b: #E6DDC4;
-    --light-color-bg: #678983;
+    --light-color-bg: #357b6e;
     --light-color-d: #181D31;
     --light-color-scheme: "https://colorhunt.co/palette/f0e9d2e6ddc4678983181d31";
     --light-color-scheme-2: "https://colorhunt.co/palette/062c3005595be2d784f5f5f5";
@@ -22,12 +25,16 @@
     --txt-font: 'Montserrat', sans-serif;
     --logo-font: 'Fasthand', cursive;
     --txt-font-cursive: 'Pacifico', cursive;
+    --big-font1: 'Nova Oval', cursive;
     --bg-img: url('..//img/form-bg-img1.jpg');
-    --grad1: linear-gradient(to left, rgba(124, 201, 23, 0.6), rgba(15, 193, 216, 0.6));
+    --grad1: linear-gradient(to left, rgb(6, 70, 99, 0.6), rgba(15, 193, 216, 0.6));
     --grad2: linear-gradient(to left, rgba(250, 118, 42, 0.7), rgba(87, 108, 202, 0.6));
     --grad2: linear-gradient(to left, #ff1e1eb3, rgba(87, 108, 202, 0.6));
     --grad-header: linear-gradient(141deg, rgb(252, 248, 232, 0.6) 0%, rgb(148, 180, 159, 0.6) 30%, rgb(236, 179, 144, 0.6) 50%, rgb(223, 120, 97, 0.6) 75%, rgb(236, 179, 101, 0.7)100%);
 }
+
+
+/******************** CSS for changing some user agent stylesheet (default CSS) ********************/
 
 html {
     scroll-behavior: smooth;
@@ -35,7 +42,7 @@ html {
 
 body {
     background-color: #F5F5F5;
-    margin: 0 0 0 0;
+    margin: 0;
     overflow-x: hidden;
 }
 
@@ -43,31 +50,43 @@ a {
     text-decoration: none;
 }
 
-.socials {
-    height: 70px;
-    width: 100%;
-    background-color: #064663;
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+
+html::-webkit-scrollbar {
+    display: none;
 }
 
-.socials li {
-    display: inline;
+
+/* Hide scrollbar for IE, Edge and Firefox */
+
+html {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
 }
+
+
+/******************** CSS for main container ********************/
 
 #container {
     height: 100%;
     width: 100%;
+    display: inline-block;
 }
 
+
+/******************** CSS for navbar ********************/
+
 #navbar {
-    width: 100%;
+    background: var(--grad1);
     height: 90px;
-    position: relative;
-    top: 0;
-    position: fixed;
-    background: var(--grad-header);
+    width: 100%;
     padding-top: 30px;
     padding-bottom: 20px;
-    z-index: 1;
+    position: fixed;
+    z-index: 99;
 }
 
 .logo,
@@ -82,26 +101,19 @@ a {
 
 .menubar {
     position: relative;
-    left: 30%;
+    left: 25%;
 }
 
 .menu-option {
+    color: #277179;
     font-family: var(--txt-font);
     font-size: 25px;
-    color: #062C30;
     transition: .75s;
 }
 
 .menu-option:hover {
-    color: #0800ff;
+    color: rgb(255, 255, 255);
     letter-spacing: 10px;
-}
-
-#logo {
-    display: inline;
-    font-family: var(--txt-font-cursive);
-    font-size: 50px;
-    color: #062C30;
 }
 
 #menu li {
@@ -109,38 +121,102 @@ a {
     padding: 5px 20px 5px 20px;
 }
 
+.logo h2 {
+    color: #002124;
+    display: inline;
+    font-family: var(--txt-font-cursive);
+    font-size: 50px;
+}
+
+
+/******************** Some common  CSS for  different sections ********************/
+
 #work,
 #about,
 #contact {
-    width: 100%;
-    height: 700px;
     display: inline-block;
+    height: 860px;
+    width: 100%;
+    text-align: center;
     padding: 0 0 0 0;
-    margin: 0 0 0 0;
-    /*background-color: var(--dark-color-bg);*/
+    z-index: 95;
+}
+
+#about,
+#contact {
+    background: black;
 }
 
 #work {
-    background-color: var(--light-color-bg);
+    background: white;
 }
 
+
+/******************** CSS for About section ********************/
+
+.hero-area {
+    padding: 10px 10px 10px 10px;
+    height: 660px;
+    width: 100%;
+    margin: 200px auto 0 auto;
+    z-index: 96;
+}
+
+#title-area,
+#description-area {
+    display: inline-block;
+}
+
+#description-area {
+    width: 50%;
+    float: left;
+}
+
+.title-area,
+.description-area p {
+    display: inline-block;
+    width: 50%;
+    padding: 5px 5px 5px 5px;
+}
+
+#hero-title p {}
+
+#hero-subtitle {}
+
+#hero-description {}
+
+
+/******************** CSS for Works section ********************/
+
+#work {}
+
 #work h1 {
-    text-align: center;
-    font-family: var(--txt-font);
+    font-family: var(--big-font1);
     font-size: 50px;
     color: #062C30;
     position: relative;
     top: 160px;
     right: 500px;
+    text-align: center;
 }
 
-#about {
-    background-color: var(--light-color-bg);
+
+/******************** CSS for Contact section ********************/
+
+
+/******************** CSS for footer section ********************/
+
+.socials {
+    background-color: #064663;
+    height: 150px;
+    width: 100%;
 }
 
-#contact {
-    background-color: var(--light-color-bg);
+.socials li {
+    display: inline;
 }
+
+#contact {}
 
 @media only screen and (max-width: 768px) {
     #container {
