@@ -2,6 +2,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Caveat&family=Fasthand&family=Headland+One&family=Julius+Sans+One&family=Montserrat&family=Nova+Oval&family=Pacifico&display=swap');
 @import url("https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900");
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Display:wght@200;400&display=swap');
 
 /******************** defining-variables ********************/
 
@@ -26,8 +27,9 @@
     --logo-font: 'Fasthand', cursive;
     --txt-font-cursive: 'Pacifico', cursive;
     --big-font1: 'Nova Oval', cursive;
+    --font1: 'Noto Serif Display', serif;
     --bg-img: url('..//img/form-bg-img1.jpg');
-    --grad1: linear-gradient(to left, rgb(6, 70, 99, 0.6), rgba(15, 193, 216, 0.6));
+    --grad1: linear-gradient(to left, rgba(22, 141, 196, 0.6), rgba(15, 193, 216, 0.6));
     --grad2: linear-gradient(to left, rgba(250, 118, 42, 0.7), rgba(87, 108, 202, 0.6));
     --grad2: linear-gradient(to left, #ff1e1eb3, rgba(87, 108, 202, 0.6));
     --grad-header: linear-gradient(141deg, rgb(252, 248, 232, 0.6) 0%, rgb(148, 180, 159, 0.6) 30%, rgb(236, 179, 144, 0.6) 50%, rgb(223, 120, 97, 0.6) 75%, rgb(236, 179, 101, 0.7)100%);
@@ -73,7 +75,6 @@ html {
 #container {
     height: 100%;
     width: 100%;
-    display: inline-block;
 }
 
 
@@ -81,11 +82,11 @@ html {
 
 #navbar {
     background: var(--grad1);
-    height: 90px;
+    height: 80px;
     width: 100%;
     padding-top: 30px;
-    padding-bottom: 20px;
     position: fixed;
+    top: 0;
     z-index: 99;
 }
 
@@ -95,37 +96,39 @@ html {
 }
 
 .logo {
-    position: relative;
-    left: 10%;
+    position: absolute;
+    left: 5%;
+    top: 20px;
+}
+
+.logo h2 {
+    color: #000000;
+    display: inline;
+    font-family: var(--txt-font-cursive);
+    font-size: 50px;
 }
 
 .menubar {
-    position: relative;
-    left: 25%;
+    position: absolute;
+    right: 5%;
+    top: 40px;
 }
 
 .menu-option {
-    color: #277179;
+    color: #0f0818;
     font-family: var(--txt-font);
     font-size: 25px;
-    transition: .75s;
+    transition: 1s;
 }
 
 .menu-option:hover {
     color: rgb(255, 255, 255);
-    letter-spacing: 10px;
+    letter-spacing: 8px;
 }
 
 #menu li {
-    display: inline;
+    display: inline-block;
     padding: 5px 20px 5px 20px;
-}
-
-.logo h2 {
-    color: #002124;
-    display: inline;
-    font-family: var(--txt-font-cursive);
-    font-size: 50px;
 }
 
 
@@ -137,8 +140,8 @@ html {
     display: inline-block;
     height: 860px;
     width: 100%;
-    text-align: center;
-    padding: 0 0 0 0;
+    margin: 0 auto 0 auto;
+    padding: 0;
     z-index: 95;
 }
 
@@ -155,11 +158,43 @@ html {
 /******************** CSS for About section ********************/
 
 .hero-area {
-    padding: 10px 10px 10px 10px;
-    height: 660px;
-    width: 100%;
+    height: 500px;
+    width: 700px;
     margin: 200px auto 0 auto;
     z-index: 96;
+    border-radius: 20px 20px 20px 20px;
+}
+
+.title-area {
+    text-align: center;
+}
+
+.title-area a {
+    display: inline-block;
+    border: 2px solid white;
+    text-transform: uppercase;
+    font-family: var(--font1);
+    font-size: 35px;
+    color: white;
+    padding: 25px;
+    margin: 25px;
+    letter-spacing: 2px;
+    transition: .75s;
+}
+
+#d1:hover {
+    border: 10px dashed rgb(198, 233, 115);
+    color: rgb(198, 233, 115);
+}
+
+#d2:hover {
+    border: 10px dashed rgb(139, 174, 250);
+    color: rgb(139, 174, 250);
+}
+
+#d3:hover {
+    border: 10px dashed rgb(224, 134, 156);
+    color: rgb(224, 134, 156);
 }
 
 #title-area,
@@ -170,13 +205,6 @@ html {
 #description-area {
     width: 50%;
     float: left;
-}
-
-.title-area,
-.description-area p {
-    display: inline-block;
-    width: 50%;
-    padding: 5px 5px 5px 5px;
 }
 
 #hero-title p {}
@@ -217,14 +245,3 @@ html {
 }
 
 #contact {}
-
-@media only screen and (max-width: 768px) {
-    #container {
-        width: 90%;
-        height: 90%;
-        margin: auto;
-        margin-top: 5%;
-        margin-bottom: 10%;
-        border-radius: 5px;
-    }
-}
