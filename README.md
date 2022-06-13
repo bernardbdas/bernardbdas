@@ -61,5 +61,5 @@
 <a href="https://www.linkedin.com/in/bernardbdas/"><img alt="LinkedIn" src="https://img.shields.io/badge/LinkedIn-Bernard%20Birendra%20Das-blue?style=flat-square&logo=linkedin"></a>
 <a href="https://www.instagram.com/bernardbdas"><img alt="Instagram" src="https://img.shields.io/badge/Instagram-bernardbdas-blue?style=flat-square&logo=instagram"></a>
 <a href="mailto:bernardbdas@gmail.com"><img alt="Email" src="https://img.shields.io/badge/Email-bernardbdas@gmail.com-blue?style=flat-square&logo=gmail"></a>
-<!--<a href="https://www.bernardbdas.com/"><img alt="Website" src="https://img.shields.io/badge/Website-www.bernardbdas.com-blue?style=flat-square&logo=google-chrome"></a>-->
+<a href="https://bernardbdas.github.io/bernardbdas/"><img alt="Website" src="https://img.shields.io/badge/Website-www.bernardbdas.github.io/bernardbdas/-blue?style=flat-square&logo=google-chrome"></a>
 </p>
