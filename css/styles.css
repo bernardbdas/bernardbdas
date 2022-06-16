@@ -182,18 +182,22 @@ html {
     transition: .75s;
 }
 
+.title-area a:hover {
+    font-size: 50px;
+}
+
 #d1:hover {
-    border: 10px dashed rgb(198, 233, 115);
+    border: 20px dashed rgb(198, 233, 115);
     color: rgb(198, 233, 115);
 }
 
 #d2:hover {
-    border: 10px dashed rgb(139, 174, 250);
+    border: 20px dashed rgb(139, 174, 250);
     color: rgb(139, 174, 250);
 }
 
 #d3:hover {
-    border: 10px dashed rgb(224, 134, 156);
+    border: 20px dashed rgb(224, 134, 156);
     color: rgb(224, 134, 156);
 }
 
