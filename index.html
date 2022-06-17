@@ -35,9 +35,9 @@
         <div id="about">
             <div class="hero-area">
                 <div class="title-area">
-                    <a id="d1" href="#">Design</a>
-                    <a id="d2" href="#">Develop</a>
-                    <a id="d3" href="#">Deploy</a>
+                    <a id="d1" href="#" onclick="on(this.id);">Design</a>
+                    <a id="d2" href="#" onclick="on(this.id);">Develop</a>
+                    <a id="d3" href="#" onclick="on(this.id);">Deploy</a>
                 </div>
                 <div class="description-area">
                 </div>
@@ -78,7 +78,53 @@
         </div>
 
     </div>
+    <div id="overlay" onclick="off()">
+        <div id="design">
+            <h1>Design</h1>
+            <hr>
+            <p></p>
+        </div>
+        <div id="develop">
+            <h1>Develop</h1>
+            <hr>
+            <p></p>
+        </div>
+        <div id="deploy">
+            <h1>Deploy</h1>
+            <hr>
+            <p></p>
+        </div>
+    </div>
 
+    <script>
+        function on(id) {
+            document.getElementById("overlay").style.display = "block";
+            if (id === "d1") {
+                document.getElementById("design").style.display = "block";
+                document.getElementById("develop").style.display = "none";
+                document.getElementById("deploy").style.display = "none";
+                return;
+            }
+
+            if (id === "d2") {
+                document.getElementById("design").style.display = "none";
+                document.getElementById("develop").style.display = "block";
+                document.getElementById("deploy").style.display = "none";
+                return;
+            }
+
+            if (id === "d3") {
+                document.getElementById("design").style.display = "none";
+                document.getElementById("develop").style.display = "none";
+                document.getElementById("deploy").style.display = "block";
+                return;
+            }
+        }
+
+        function off() {
+            document.getElementById("overlay").style.display = "none";
+        }
+    </script>
 </body>
 
 </html>
