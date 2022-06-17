@@ -9,9 +9,14 @@
     <title>Bernard Birendra Das</title>
     <link rel="icon" type="image/x-icon" href="images/favicon.png">
     <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <link rel="stylesheet" type="text/css" href="css/cursor.css">
 </head>
 
 <body>
+    <div id="follower">
+        <div id="circle1"></div>
+        <div id="circle2"></div>
+    </div>
     <div id="container">
         <!--navbar starts here-->
         <div id="navbar">
@@ -25,7 +30,7 @@
                     <li><a class="menu-option" href="#about">About</a></li>
                     <li><a class="menu-option" href="#work">Work</a></li>
                     <li><a class="menu-option" href="#blog">Blog</a></li>
-                    <li><a class="menu-option" href="#contact">Contact</a></li>
+                    <li><a class="menu-option" href="#footer">Contact</a></li>
                     <!--Planning to use chatbot for contacts-->
                 </ul>
             </div>
@@ -124,6 +129,43 @@
         function off() {
             document.getElementById("overlay").style.display = "none";
         }
+
+        (function() {
+            var follower, init, mouseX, mouseY, positionElement, printout, timer;
+
+            follower = document.getElementById('follower');
+
+            printout = document.getElementById('printout');
+
+            mouseX = (event) => {
+                return event.clientX;
+            };
+
+            mouseY = (event) => {
+                return event.clientY;
+            };
+
+            positionElement = (event) => {
+                var mouse;
+                mouse = {
+                    x: mouseX(event),
+                    y: mouseY(event)
+                };
+                follower.style.top = mouse.y + 'px';
+                return follower.style.left = mouse.x + 'px';
+            };
+
+            timer = false;
+
+            window.onmousemove = init = (event) => {
+                var _event;
+                _event = event;
+                return timer = setTimeout(() => {
+                    return positionElement(_event);
+                }, 1);
+            };
+
+        }).call(this);
     </script>
 </body>
 

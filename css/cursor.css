@@ -1,0 +1,132 @@
+html {
+    cursor: none;
+    background: #666;
+}
+
+#follower {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+
+#follower #circle1 {
+    position: absolute;
+    -webkit-animation: pulse 2s infinite;
+    /* Chrome, Safari, Opera */
+    animation: pulse 2s infinite;
+    background: #fff;
+    border-radius: 50%;
+    height: 0em;
+    width: 0em;
+    margin-top: 0em;
+    margin-left: 0em;
+}
+
+#follower #circle2 {
+    position: absolute;
+    -webkit-animation: pulse 1s infinite;
+    /* Chrome, Safari, Opera */
+    animation: pulse 4s infinite;
+    background: rgba(6, 70, 99, 1);
+    border-radius: 50%;
+    height: 0em;
+    width: 0em;
+    margin-top: 0em;
+    margin-left: 0em;
+}
+
+@-moz-keyframes pulse {
+    0% {
+        opacity: 0.2;
+        height: 1em;
+        width: 1em;
+        margin-top: -0.5em;
+        margin-left: -0.5em;
+    }
+    50% {
+        opacity: 0.9;
+        height: 2em;
+        width: 2em;
+        margin-top: -1.5em;
+        margin-left: -1.5em;
+    }
+    100% {
+        opacity: 0.2;
+        height: 1em;
+        width: 1em;
+        margin-top: -0.5em;
+        margin-left: -0.5em;
+    }
+}
+
+@-webkit-keyframes pulse {
+    0% {
+        opacity: 0.2;
+        height: 1em;
+        width: 1em;
+        margin-top: -0.5em;
+        margin-left: -0.5em;
+    }
+    50% {
+        opacity: 0.9;
+        height: 2em;
+        width: 2em;
+        margin-top: -1.5em;
+        margin-left: -1.5em;
+    }
+    100% {
+        opacity: 0.2;
+        height: 1em;
+        width: 1em;
+        margin-top: -0.5em;
+        margin-left: -0.5em;
+    }
+}
+
+@-o-keyframes pulse {
+    0% {
+        opacity: 0.2;
+        height: 1em;
+        width: 1em;
+        margin-top: -0.5em;
+        margin-left: -0.5em;
+    }
+    50% {
+        opacity: 0.9;
+        height: 2em;
+        width: 2em;
+        margin-top: -1.5em;
+        margin-left: -1.5em;
+    }
+    100% {
+        opacity: 0.2;
+        height: 1em;
+        width: 1em;
+        margin-top: -0.5em;
+        margin-left: -0.5em;
+    }
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 0.2;
+        height: 1em;
+        width: 1em;
+        margin-top: -0.5em;
+        margin-left: -0.5em;
+    }
+    50% {
+        opacity: 0.9;
+        height: 2em;
+        width: 2em;
+        margin-top: -1.5em;
+        margin-left: -1.5em;
+    }
+    100% {
+        opacity: 0.2;
+        height: 1em;
+        width: 1em;
+        margin-top: -0.5em;
+        margin-left: -0.5em;
+    }
+}
