@@ -235,17 +235,45 @@ html {
 
 /******************** CSS for Contact section ********************/
 
+#contact {}
+
 
 /******************** CSS for footer section ********************/
 
-.socials {
+#footer {
     background-color: #064663;
     height: 150px;
     width: 100%;
+    display: inline-block;
+    text-align: center;
 }
 
-.socials li {
-    display: inline;
+#footer ul,
+#copyright {
+    position: relative;
+    margin: 0 auto 0 auto;
+    text-align: center;
 }
 
-#contact {}
+#footer ul {
+    top: 30%;
+}
+
+#footer li {
+    display: inline-block;
+    padding: 0 20px 0 20px;
+}
+
+.social-option img {
+    height: 25px;
+    width: 25px;
+    border: 1.5px solid black;
+    border-radius: 20% 20% 20% 20%;
+}
+
+#copyright {
+    top: 50%;
+    font-family: var(--txt-font);
+    font-size: 15px;
+    color: #ffffff;
+}
