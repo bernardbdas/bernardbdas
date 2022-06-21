@@ -87,17 +87,32 @@
         <div id="design">
             <h1>Design</h1>
             <hr>
-            <p></p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Pellentesque diam volutpat commodo sed egestas egestas fringilla. Viverra maecenas accumsan lacus vel facilisis volutpat.
+                Tincidunt augue interdum velit euismod in pellentesque massa placerat duis. Ornare quam viverra orci sagittis eu volutpat odio. Cursus sit amet dictum sit amet justo. Iaculis eu non diam phasellus vestibulum lorem. Consectetur adipiscing
+                elit pellentesque habitant morbi. Eu turpis egestas pretium aenean pharetra magna ac. Faucibus vitae aliquet nec ullamcorper sit amet risus nullam.
+                <br><br> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Pellentesque diam volutpat commodo sed egestas egestas fringilla. Viverra maecenas accumsan lacus vel
+                facilisis volutpat. Tincidunt augue interdum velit euismod in pellentesque massa placerat duis. Ornare quam viverra orci sagittis eu volutpat odio. Cursus sit amet dictum sit amet justo. Iaculis eu non diam phasellus vestibulum lorem.
+                Consectetur adipiscing elit pellentesque habitant morbi. Eu turpis egestas pretium aenean pharetra magna ac. Faucibus vitae aliquet nec ullamcorper sit amet risus nullam.</p>
         </div>
         <div id="develop">
             <h1>Develop</h1>
             <hr>
-            <p></p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Pellentesque diam volutpat commodo sed egestas egestas fringilla. Viverra maecenas accumsan lacus vel facilisis volutpat.
+                Tincidunt augue interdum velit euismod in pellentesque massa placerat duis. Ornare quam viverra orci sagittis eu volutpat odio. Cursus sit amet dictum sit amet justo. Iaculis eu non diam phasellus vestibulum lorem. Consectetur adipiscing
+                elit pellentesque habitant morbi. Eu turpis egestas pretium aenean pharetra magna ac. Faucibus vitae aliquet nec ullamcorper sit amet risus nullam.
+                <br><br> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Pellentesque diam volutpat commodo sed egestas egestas fringilla. Viverra maecenas accumsan lacus vel
+                facilisis volutpat. Tincidunt augue interdum velit euismod in pellentesque massa placerat duis. Ornare quam viverra orci sagittis eu volutpat odio. Cursus sit amet dictum sit amet justo. Iaculis eu non diam phasellus vestibulum lorem.
+                Consectetur adipiscing elit pellentesque habitant morbi. Eu turpis egestas pretium aenean pharetra magna ac. Faucibus vitae aliquet nec ullamcorper sit amet risus nullam.</p>
         </div>
         <div id="deploy">
             <h1>Deploy</h1>
             <hr>
-            <p></p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Pellentesque diam volutpat commodo sed egestas egestas fringilla. Viverra maecenas accumsan lacus vel facilisis volutpat.
+                Tincidunt augue interdum velit euismod in pellentesque massa placerat duis. Ornare quam viverra orci sagittis eu volutpat odio. Cursus sit amet dictum sit amet justo. Iaculis eu non diam phasellus vestibulum lorem. Consectetur adipiscing
+                elit pellentesque habitant morbi. Eu turpis egestas pretium aenean pharetra magna ac. Faucibus vitae aliquet nec ullamcorper sit amet risus nullam.
+                <br><br> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Pellentesque diam volutpat commodo sed egestas egestas fringilla. Viverra maecenas accumsan lacus vel
+                facilisis volutpat. Tincidunt augue interdum velit euismod in pellentesque massa placerat duis. Ornare quam viverra orci sagittis eu volutpat odio. Cursus sit amet dictum sit amet justo. Iaculis eu non diam phasellus vestibulum lorem.
+                Consectetur adipiscing elit pellentesque habitant morbi. Eu turpis egestas pretium aenean pharetra magna ac. Faucibus vitae aliquet nec ullamcorper sit amet risus nullam.</p>
         </div>
     </div>
 
@@ -129,43 +144,6 @@
         function off() {
             document.getElementById("overlay").style.display = "none";
         }
-
-        (function() {
-            var follower, init, mouseX, mouseY, positionElement, printout, timer;
-
-            follower = document.getElementById('follower');
-
-            printout = document.getElementById('printout');
-
-            mouseX = (event) => {
-                return event.clientX;
-            };
-
-            mouseY = (event) => {
-                return event.clientY;
-            };
-
-            positionElement = (event) => {
-                var mouse;
-                mouse = {
-                    x: mouseX(event),
-                    y: mouseY(event)
-                };
-                follower.style.top = mouse.y + 'px';
-                return follower.style.left = mouse.x + 'px';
-            };
-
-            timer = false;
-
-            window.onmousemove = init = (event) => {
-                var _event;
-                _event = event;
-                return timer = setTimeout(() => {
-                    return positionElement(_event);
-                }, 1);
-            };
-
-        }).call(this);
     </script>
 </body>
 

@@ -105,7 +105,7 @@ html {
     color: #000000;
     display: inline;
     font-family: var(--txt-font-cursive);
-    font-size: 50px;
+    font-size: 300%;
 }
 
 .menubar {
@@ -188,9 +188,15 @@ html {
     width: 80%;
 }
 
-#design,
-#develop,
-#deploy p {}
+#design p,
+#develop p,
+#deploy p {
+    text-indent: 4em;
+    margin: 50px 50px 50px 100px;
+    font-family: var(--txt-font);
+    font-size: 20px;
+    color: white;
+}
 
 
 /******************** CSS for About section ********************/
