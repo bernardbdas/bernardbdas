@@ -1,0 +1,37 @@
+name: Daily GitHub Stats Update
+
+on:
+  schedule:
+    - cron: '0 0 * * *'
+  workflow_dispatch:
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
+jobs:
+  update-stats:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+        with:
+          python-version: '3.14'
+      - name: Install dependencies
+        run: uv sync --no-dev
+      - name: Run main.py
+        env:
+          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          USER_NAME: ${{ secrets.USER_NAME }}
+          OWNER_ID: ${{ secrets.OWNER_ID }}
+        run: uv run main.py
+      - name: Commit and push if changed
+        run: |
+          git config --global user.name '${{ secrets.USER_NAME }}'
+          git config --global user.email '${{ secrets.USER_EMAIL }}'
+          git add -A
+          if ! git diff --staged --quiet; then
+            git commit -m "Auto-update stats"
+            git push
+          fi
