@@ -20,7 +20,7 @@ text, tspan {white-space: pre;}
 <text x="390"  y="30" fill="#c9d1d9">
   <tspan x="390"  y="30">bernardbdas</tspan> -———————————————————————————————————————————-—-
   <tspan x="390"  y="50" class="cc">. </tspan><tspan class="key">OS</tspan>:<tspan class="cc">...............................</tspan><tspan class="value">macOS, Linux (CachyOS)</tspan>
-  <tspan x="390"  y="70" class="cc">. </tspan><tspan class="key">Uptime</tspan>:<tspan class="cc">......................</tspan><tspan class="value">25 years, 7 months, 28 days</tspan>
+  <tspan x="390"  y="70" class="cc">. </tspan><tspan class="key">Uptime</tspan>:<tspan class="cc">......................</tspan><tspan class="value">25 years, 7 months, 29 days</tspan>
   <tspan x="390"  y="90" class="cc">. </tspan><tspan class="key">Host</tspan>:<tspan class="cc">........................</tspan><tspan class="value">MacBook Air (M1), Custom PC</tspan>
   <tspan x="390"  y="110" class="cc">. </tspan><tspan class="key">Kernel</tspan>:<tspan class="cc">......................</tspan><tspan class="value">Machine Learning Enthusiast</tspan>
   <tspan x="390"  y="130" class="cc">. </tspan><tspan class="key">IDE</tspan>:<tspan class="cc">.......................................</tspan><tspan class="value">VSCode, Xcode</tspan>
@@ -38,7 +38,7 @@ text, tspan {white-space: pre;}
   <tspan x="390"  y="430" class="cc">. </tspan><tspan class="key">Instagram</tspan>:<tspan class="cc">............................</tspan><tspan class="value">therailroadmanshow</tspan>
   <tspan x="390"  y="470">- GitHub Stats</tspan> -—————————————————————————————————————————-—
   <tspan x="390"  y="490" class="cc">. </tspan><tspan class="key">Repos</tspan>:<tspan class="cc">...</tspan><tspan class="value">53</tspan> {<tspan class="key">Contributed</tspan>: <tspan class="value">56</tspan>} | <tspan class="key">Stars</tspan>:<tspan class="cc">...........</tspan><tspan class="value">3</tspan>
-  <tspan x="390"  y="510" class="cc">. </tspan><tspan class="key">Commmits</tspan>:<tspan class="cc">.................</tspan><tspan class="value">431</tspan> | <tspan class="key">Followers</tspan>:<tspan class="cc">.......</tspan><tspan class="value">27</tspan>
-  <tspan x="390"  y="530" class="cc">. </tspan><tspan class="key">Lines of Code on GitHub</tspan>:<tspan class="cc"></tspan><tspan class="value">2,007,068</tspan>
- (<tspan class="addColor">2,588,350</tspan><tspan class="addColor">++</tspan>, <tspan class="delColor">581,282</tspan><tspan class="delColor">--</tspan>) </text>
+  <tspan x="390"  y="510" class="cc">. </tspan><tspan class="key">Commmits</tspan>:<tspan class="cc">.................</tspan><tspan class="value">433</tspan> | <tspan class="key">Followers</tspan>:<tspan class="cc">.......</tspan><tspan class="value">27</tspan>
+  <tspan x="390"  y="530" class="cc">. </tspan><tspan class="key">Lines of Code on GitHub</tspan>:<tspan class="cc"></tspan><tspan class="value">2,006,425</tspan>
+ (<tspan class="addColor">2,588,356</tspan><tspan class="addColor">++</tspan>, <tspan class="delColor">581,931</tspan><tspan class="delColor">--</tspan>) </text>
 </svg>
