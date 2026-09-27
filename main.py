@@ -13,7 +13,7 @@ load_dotenv("local.env")
 
 class UserStats:
     # Hardcoded values and user details
-    USER_NAME = os.environ.get("USER_NAME", "bernard")
+    USER_NAME = os.environ.get("USER_NAME", "bernardbdas")
     OWNER_ID = os.environ.get("OWNER_ID", "")
     TOKENS: ClassVar[list[str]] = [
         t.strip()
@@ -32,7 +32,7 @@ class UserStats:
     OS = "macOS, Linux (CachyOS)"
     HOST = "MacBook Air (M1), Custom PC Rig"
     TERMINAL = "zsh, Kitty, Antigravity"
-    FOCUS = "Deep Learning & Federated Systems"
+    FOCUS = "Federated Learning, Computer Vision, MLOps"
     LANGUAGES_PROG = "Python, Java, TypeScript, C/C++"
     STACK_TOOLS = "Docker, PyTorch, FastAPI, Vite, NextJS"
     SOUNDTRACK = "R&B, Soul, Psychedelic Rock & Jazz"
@@ -619,7 +619,7 @@ class UserStats:
             f'<rect width="{box_width}px" height="{box_height}px" fill="{rect_fill}" rx="15" />',
             f'<image x="15" y="40" width="350" height="500" href="{gif_data}" />',
             f'<text x="390"  y="30" fill="{text_fill}">',
-            f'  <tspan x="390"  y="30" class="prompt">{cls.USER_NAME}@BERNARDs-MacBook-Air:~$ </tspan><tspan class="value">neofetch</tspan><tspan class="cc"> --profile -———————————————————————-—</tspan>',
+            f'  <tspan x="390"  y="30" class="prompt">{cls.USER_NAME[:-4]}@BERNARDs-MacBook-Air:~$ </tspan><tspan class="value">neofetch</tspan><tspan class="cc"> --profile -———————————————————————-—</tspan>',
             f'  <tspan x="390"  y="52" class="cc">. </tspan><tspan class="key">OS</tspan>:<tspan class="cc">{os_dots}</tspan><tspan class="value">{os_escaped}</tspan>',
             f'  <tspan x="390"  y="74" class="cc">. </tspan><tspan class="key">Host</tspan>:<tspan class="cc">{host_dots}</tspan><tspan class="value">{host_escaped}</tspan>',
             f'  <tspan x="390"  y="96" class="cc">. </tspan><tspan class="key">Shell / Terminal</tspan>:<tspan class="cc">{shell_dots}</tspan><tspan class="value">{shell_escaped}</tspan>',
