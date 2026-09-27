@@ -67,11 +67,35 @@ class UserStats:
             print(f"[UserStats] Switched to token index {cls.TOKEN_INDEX}")
 
     @classmethod
+    def ensure_user_credentials(cls) -> None:
+        if cls.USER_NAME:
+            cls.USER_NAME = cls.USER_NAME.strip().strip("'\"")
+
+        need_viewer = not cls.OWNER_ID or not cls.USER_NAME or "@" in cls.USER_NAME or " " in cls.USER_NAME
+        if need_viewer:
+            query = """query { viewer { id login } }"""
+            res = cls.simple_request("get_viewer_info", query, {})
+            viewer = res.json().get("data", {}).get("viewer", {})
+            if viewer:
+                v_id = str(viewer.get("id", "")).strip()
+                v_login = str(viewer.get("login", "")).strip()
+                if v_id and not cls.OWNER_ID:
+                    cls.OWNER_ID = v_id
+                if v_login and (not cls.USER_NAME or "@" in cls.USER_NAME or " " in cls.USER_NAME):
+                    print(f"[UserStats] Resolved username from GitHub token: '{v_login}' (was '{cls.USER_NAME}')")
+                    cls.USER_NAME = v_login
+
+    @classmethod
     def get_owner_id(cls) -> str:
         if not cls.OWNER_ID:
-            query = """query { viewer { id login } }"""
-            res = cls.simple_request("get_owner_id", query, {})
-            cls.OWNER_ID = str(res.json()["data"]["viewer"]["id"])
+            cls.ensure_user_credentials()
+            if not cls.OWNER_ID:
+                query = """query { viewer { id login } }"""
+                res = cls.simple_request("get_owner_id", query, {})
+                viewer = res.json().get("data", {}).get("viewer", {})
+                cls.OWNER_ID = str(viewer.get("id", ""))
+                if not cls.USER_NAME or "@" in cls.USER_NAME or " " in cls.USER_NAME:
+                    cls.USER_NAME = str(viewer.get("login", cls.USER_NAME)).strip()
         return cls.OWNER_ID
 
     @classmethod
@@ -121,14 +145,28 @@ class UserStats:
     @classmethod
     def follower_getter(cls) -> int:
         cls.query_count_inc("follower_getter")
+        cls.ensure_user_credentials()
         query = """query($login: String!){user(login: $login){followers{totalCount}}}"""
         variables = {"login": cls.USER_NAME}
         request = cls.simple_request("follower_getter", query, variables)
-        return int(request.json()["data"]["user"]["followers"]["totalCount"])
+        user_node = request.json().get("data", {}).get("user")
+        if not user_node:
+            v_query = """query { viewer { id login } }"""
+            res_v = cls.simple_request("get_viewer_fallback", v_query, {})
+            v_login = str(res_v.json().get("data", {}).get("viewer", {}).get("login", "")).strip()
+            if v_login and v_login != cls.USER_NAME:
+                cls.USER_NAME = v_login
+                variables["login"] = v_login
+                request = cls.simple_request("follower_getter", query, variables)
+                user_node = request.json().get("data", {}).get("user")
+        if not user_node or "followers" not in user_node:
+            return 0
+        return int(user_node["followers"]["totalCount"])
 
     @classmethod
     def graph_repos_stars(cls, count_type: str, owner_affiliation: list[str], cursor: str | None = None) -> int:
         cls.query_count_inc("graph_repos_stars")
+        cls.ensure_user_credentials()
         query = """query ($owner_affiliation: [RepositoryAffiliation], $login: String!, $cursor: String) {
             user(login: $login) {
                 repositories(first: 100, after: $cursor, ownerAffiliations: $owner_affiliation) {
@@ -137,7 +175,19 @@ class UserStats:
                     pageInfo {endCursor hasNextPage}}}}"""
         variables = {"owner_affiliation": owner_affiliation, "login": cls.USER_NAME, "cursor": cursor}
         request = cls.simple_request("graph_repos_stars", query, variables)
-        data = request.json()["data"]["user"]["repositories"]
+        user_node = request.json().get("data", {}).get("user")
+        if not user_node:
+            v_query = """query { viewer { id login } }"""
+            res_v = cls.simple_request("get_viewer_fallback", v_query, {})
+            v_login = str(res_v.json().get("data", {}).get("viewer", {}).get("login", "")).strip()
+            if v_login and v_login != cls.USER_NAME:
+                cls.USER_NAME = v_login
+                variables["login"] = v_login
+                request = cls.simple_request("graph_repos_stars", query, variables)
+                user_node = request.json().get("data", {}).get("user")
+        if not user_node or "repositories" not in user_node:
+            return 0
+        data = user_node["repositories"]
         if count_type == "repos":
             return int(data["totalCount"])
         stars: int = sum(int(node["node"]["stargazers"]["totalCount"]) for node in data["edges"])
@@ -189,7 +239,23 @@ class UserStats:
             "author_id": owner_id,
         }
         request = cls.simple_request("loc_query", query, variables)
-        repos = request.json()["data"]["user"]["repositories"]
+        user_node = request.json().get("data", {}).get("user")
+        if not user_node:
+            # Fallback to viewer login if USER_NAME was misconfigured in GitHub Secrets
+            v_query = """query { viewer { id login } }"""
+            res_v = cls.simple_request("get_viewer_fallback", v_query, {})
+            v_login = str(res_v.json().get("data", {}).get("viewer", {}).get("login", "")).strip()
+            if v_login and v_login != cls.USER_NAME:
+                print(f"[UserStats] User '{cls.USER_NAME}' not found in loc_query. Retrying with viewer '{v_login}'...")
+                cls.USER_NAME = v_login
+                variables["login"] = v_login
+                request = cls.simple_request("loc_query", query, variables)
+                user_node = request.json().get("data", {}).get("user")
+        if not user_node or "repositories" not in user_node:
+            raise Exception(
+                f"loc_query failed: could not resolve repositories for user '{cls.USER_NAME}': {request.text}"
+            )
+        repos = user_node["repositories"]
         edges += repos["edges"]
         if repos["pageInfo"]["hasNextPage"]:
             return cls.loc_query(owner_affiliation, comment_size, force_cache, repos["pageInfo"]["endCursor"], edges)
@@ -553,7 +619,7 @@ class UserStats:
             f'<rect width="{box_width}px" height="{box_height}px" fill="{rect_fill}" rx="15" />',
             f'<image x="15" y="40" width="350" height="500" href="{gif_data}" />',
             f'<text x="390"  y="30" fill="{text_fill}">',
-            f'  <tspan x="390"  y="30" class="prompt">{cls.USER_NAME}@macbook:~$ </tspan><tspan class="value">neofetch</tspan><tspan class="cc"> --profile -———————————————————————-—</tspan>',
+            f'  <tspan x="390"  y="30" class="prompt">{cls.USER_NAME}@BERNARDs-MacBook-Air:~$ </tspan><tspan class="value">neofetch</tspan><tspan class="cc"> --profile -———————————————————————-—</tspan>',
             f'  <tspan x="390"  y="52" class="cc">. </tspan><tspan class="key">OS</tspan>:<tspan class="cc">{os_dots}</tspan><tspan class="value">{os_escaped}</tspan>',
             f'  <tspan x="390"  y="74" class="cc">. </tspan><tspan class="key">Host</tspan>:<tspan class="cc">{host_dots}</tspan><tspan class="value">{host_escaped}</tspan>',
             f'  <tspan x="390"  y="96" class="cc">. </tspan><tspan class="key">Shell / Terminal</tspan>:<tspan class="cc">{shell_dots}</tspan><tspan class="value">{shell_escaped}</tspan>',
@@ -633,6 +699,7 @@ class UserStats:
 
 
 if __name__ == "__main__":
+    UserStats.ensure_user_credentials()
     if os.path.exists("outputs"):
         for f in os.listdir("outputs"):
             if f.endswith(".svg"):
