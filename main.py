@@ -622,7 +622,7 @@ class UserStats:
             f'  <tspan x="390"  y="30" class="prompt">{cls.USER_NAME[:-4]}@BERNARDs-MacBook-Air:~$ </tspan><tspan class="value">neofetch</tspan><tspan class="cc"> --profile -———————————————————————-—</tspan>',
             f'  <tspan x="390"  y="52" class="cc">. </tspan><tspan class="key">OS</tspan>:<tspan class="cc">{os_dots}</tspan><tspan class="value">{os_escaped}</tspan>',
             f'  <tspan x="390"  y="74" class="cc">. </tspan><tspan class="key">Host</tspan>:<tspan class="cc">{host_dots}</tspan><tspan class="value">{host_escaped}</tspan>',
-            f'  <tspan x="390"  y="96" class="cc">. </tspan><tspan class="key">Shell / Terminal</tspan>:<tspan class="cc">{shell_dots}</tspan><tspan class="value">{shell_escaped}</tspan>',
+            f'  <tspan x="390"  y="96" class="cc">. </tspan><tspan class="key">Terminal / IDE</tspan>:<tspan class="cc">{shell_dots}</tspan><tspan class="value">{shell_escaped}</tspan>',
             f'  <tspan x="390"  y="118" class="cc">. </tspan><tspan class="key">Uptime</tspan>:<tspan class="cc">{age_dots}</tspan><tspan class="value">{age_str}</tspan>',
             '  <tspan x="390"  y="144" class="header">- Focus &amp; Stack</tspan><tspan class="cc"> -————————————————————————————————————————————-—</tspan>',
             f'  <tspan x="390"  y="166" class="cc">. </tspan><tspan class="key">Focus</tspan>:<tspan class="cc">{focus_dots}</tspan><tspan class="value">{focus_escaped}</tspan>',
