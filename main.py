@@ -13,7 +13,7 @@ load_dotenv("local.env")
 
 class UserStats:
     # Hardcoded values and user details
-    USER_NAME = os.environ.get("USER_NAME", "bernardbdas")
+    USER_NAME = os.environ.get("USER_NAME", "bernard")
     OWNER_ID = os.environ.get("OWNER_ID", "")
     TOKENS: ClassVar[list[str]] = [
         t.strip()
